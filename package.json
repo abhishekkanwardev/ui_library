@@ -1,0 +1,32 @@
+{
+  "name": "modern-ui-library",
+  "version": "1.0.0",
+  "description": "A modern, customizable React UI component library with advanced theming",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --parallel --recursive run dev",
+    "build": "pnpm --recursive run build",
+    "test": "pnpm --recursive run test",
+    "lint": "pnpm --recursive run lint",
+    "type-check": "pnpm --recursive run type-check",
+    "storybook": "pnpm --filter @modern-ui/core run storybook",
+    "docs:dev": "pnpm --filter @modern-ui/docs run dev",
+    "docs:build": "pnpm --filter @modern-ui/docs run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "prettier": "^3.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.0.0"
+} 
