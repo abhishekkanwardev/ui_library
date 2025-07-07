@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern UI Library Demo</title>
+    <script type="module">
+        import React from 'react';
+        import { createRoot } from 'react-dom/client';
+        import { ThemeProvider, Button } from './src/index.ts';
+        import './src/components/Button/Button.css';
+        
+        function App() {
+            return React.createElement(ThemeProvider, { defaultMode: 'light' },
+                React.createElement('div', { 
+                    style: { 
+                        padding: '2rem', 
+                        fontFamily: 'Inter, sans-serif',
+                        background: 'var(--ui-color-background-primary)',
+                        color: 'var(--ui-color-text-primary)',
+                        minHeight: '100vh'
+                    } 
+                },
+                    React.createElement('h1', null, 'Modern UI Library Demo'),
+                    React.createElement('div', { style: { display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' } },
+                        React.createElement(Button, { variant: 'contained', size: 'md' }, 'Primary Button'),
+                        React.createElement(Button, { variant: 'outlined', size: 'md' }, 'Outlined Button'),
+                        React.createElement(Button, { variant: 'text', size: 'md' }, 'Text Button'),
+                        React.createElement(Button, { variant: 'ghost', size: 'md' }, 'Ghost Button'),
+                        React.createElement(Button, { variant: 'gradient', size: 'md' }, 'Gradient Button')
+                    ),
+                    React.createElement('div', { style: { display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' } },
+                        React.createElement(Button, { variant: 'contained', size: 'xs' }, 'XS'),
+                        React.createElement(Button, { variant: 'contained', size: 'sm' }, 'SM'),
+                        React.createElement(Button, { variant: 'contained', size: 'md' }, 'MD'),
+                        React.createElement(Button, { variant: 'contained', size: 'lg' }, 'LG'),
+                        React.createElement(Button, { variant: 'contained', size: 'xl' }, 'XL')
+                    ),
+                    React.createElement('div', { style: { display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' } },
+                        React.createElement(Button, { variant: 'contained', color: 'primary' }, 'Primary'),
+                        React.createElement(Button, { variant: 'contained', color: 'secondary' }, 'Secondary'),
+                        React.createElement(Button, { variant: 'contained', color: 'success' }, 'Success'),
+                        React.createElement(Button, { variant: 'contained', color: 'warning' }, 'Warning'),
+                        React.createElement(Button, { variant: 'contained', color: 'error' }, 'Error'),
+                        React.createElement(Button, { variant: 'contained', color: 'info' }, 'Info')
+                    ),
+                    React.createElement('div', { style: { display: 'flex', gap: '1rem', flexWrap: 'wrap' } },
+                        React.createElement(Button, { loading: true }, 'Loading'),
+                        React.createElement(Button, { disabled: true }, 'Disabled'),
+                        React.createElement(Button, { fullWidth: true }, 'Full Width')
+                    )
+                )
+            );
+        }
+        
+        const container = document.getElementById('root');
+        const root = createRoot(container);
+        root.render(React.createElement(App));
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html> 
